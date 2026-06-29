@@ -1,0 +1,31 @@
+{
+  "id": "popular_science_article_generate_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.17",
+  "name": "科普短文生成",
+  "description": "根据用户输入的主题关键词生成300-500字专业科普短文，流式输出",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "topic_keywords": {
+        "type": "string",
+        "description": "科普短文的主题关键词"
+      }
+    },
+    "required": [
+      "topic_keywords"
+    ]
+  },
+  "formValue": {
+    "modelID": "87",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位资深的科普内容创作专家，擅长将复杂的科学知识转化为通俗易懂、生动有趣的科普内容。\n\n请根据以下主题关键词生成一篇专业科普短文：\n主题关键词：{{input.topic_keywords}}\n\n内容要求：\n1. 字数控制在300-500字之间\n2. 内容准确严谨，符合科学事实，避免错误信息\n3. 语言通俗易懂，适合普通大众阅读，避免过于专业的晦涩术语，必要时可以进行通俗解释\n4. 结构清晰，开头引入主题，中间阐述核心知识点，结尾可以简要总结或给出实用提示\n5. 风格生动有趣，可以适当加入生活化的例子或类比，帮助读者理解\n6. 不需要添加标题、话题标签或其他额外格式，直接输出正文内容即可"
+  },
+  "createdAt": 1782711751859,
+  "updatedAt": 1782711751859,
+  "createdBy": 7578885771046702045
+}

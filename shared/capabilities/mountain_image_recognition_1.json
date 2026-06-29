@@ -1,0 +1,40 @@
+{
+  "id": "mountain_image_recognition_1",
+  "pluginKey": "@official-plugins/ai-image-understanding",
+  "pluginVersion": "1.0.19",
+  "name": "山峰图像识别",
+  "description": "识别用户上传的山峰图片，判断山峰名称、地貌类型、海拔等地质特征，流式输出识别结果",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "mountain_images": {
+        "format": "plugin-image-url",
+        "description": "待识别的山峰图片",
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "additional_requirements": {
+        "type": "string",
+        "description": "用户补充的识别要求（可选）"
+      }
+    },
+    "required": [
+      "mountain_images"
+    ]
+  },
+  "formValue": {
+    "images": "{{input.mountain_images}}",
+    "modelID": "88",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位专业的地质地理专家，精通全球山峰的地理特征、地质构造和相关数据。\n\n请对提供的山峰图片进行精准识别分析：\n\n识别内容维度：\n1. 山峰基本信息：山峰名称、所属山脉、所在国家/地区\n2. 地质特征：地貌类型、岩石构成、形成年代、典型地质特征\n3. 海拔数据：准确海拔高度、相对高度\n4. 补充信息：显著地标、攀登难度等级、相关地理常识\n\n{{input.additional_requirements}}\n\n输出要求：\n- 信息准确客观，无法确定的内容请明确标注为\"待确认\"\n- 结构清晰，分点说明各个维度的识别结果\n- 数据尽量精确，来源可靠\n- 语言专业严谨，符合地理地质领域的规范表述"
+  },
+  "createdAt": 1782711753728,
+  "updatedAt": 1782711753728,
+  "createdBy": 7578885771046702045
+}

@@ -1,0 +1,36 @@
+{
+  "id": "study_tour_plan_generator_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.17",
+  "name": "研学方案生成",
+  "description": "根据用户输入的天数和主题生成科普研学方案，流式输出",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "days": {
+        "type": "string",
+        "description": "研学天数"
+      },
+      "theme": {
+        "type": "string",
+        "description": "研学主题"
+      }
+    },
+    "required": [
+      "days",
+      "theme"
+    ]
+  },
+  "formValue": {
+    "modelID": "87",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位专业的科普研学方案设计师，拥有丰富的研学活动策划经验，擅长设计兼具教育性、趣味性和安全性的研学方案。\n\n请根据以下信息生成一份完整的科普研学方案：\n研学天数：{{input.days}}\n研学主题：{{input.theme}}\n\n方案内容要求：\n1. 方案概述：包含活动背景、目标意义、适合人群\n2. 行程安排：按天详细规划，每天包含上午、下午、晚上的具体活动内容，明确每个环节的科普知识点、活动形式、时长安排\n3. 研学亮点：突出本方案的特色教育价值和创新点\n4. 师资配置：说明所需的专业人员配置及资质要求\n5. 安全保障：制定完善的安全管理措施和应急预案\n6. 费用说明：列出主要的费用构成参考\n7. 注意事项：告知参与者需要提前准备的物品和相关纪律要求\n\n输出要求：\n- 结构清晰，逻辑严谨\n- 内容具体可落地，具备实操性\n- 语言简洁明了，适合学生和家长阅读\n- 科普知识点准确易懂，符合对应年龄段认知水平"
+  },
+  "createdAt": 1782711751375,
+  "updatedAt": 1782711751375,
+  "createdBy": 7578885771046702045
+}

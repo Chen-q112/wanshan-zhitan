@@ -1,0 +1,31 @@
+{
+  "id": "guide_speech_generation_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.17",
+  "name": "讲解词生成",
+  "description": "根据用户输入的山峰名称生成导游讲解词，流式输出",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "mountain_name": {
+        "type": "string",
+        "description": "山峰名称"
+      }
+    },
+    "required": [
+      "mountain_name"
+    ]
+  },
+  "formValue": {
+    "modelID": "87",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位资深的专业导游，拥有丰富的地理知识和讲解经验，擅长用生动有趣、通俗易懂的语言介绍景点。请为以下山峰生成一篇专业的导游讲解词：\n山峰名称：{{input.mountain_name}}\n\n讲解词要求：\n1. 开头：亲切自然的问候，快速引入主题\n2. 基础介绍：山峰的地理位置、海拔高度、地质特点等基本信息\n3. 文化背景：相关的历史传说、人文故事、名人典故等\n4. 景点特色：山峰的独特景观、自然资源、观赏亮点等\n5. 游览建议：最佳观赏时间、游览路线、注意事项等实用信息\n6. 结尾：引导游客欣赏美景，送上美好祝愿\n\n语言风格：口语化表达，生动有趣，富有感染力，适合现场讲解使用，长度控制在800-1200字左右。"
+  },
+  "createdAt": 1782711750825,
+  "updatedAt": 1782711750825,
+  "createdBy": 7578885771046702045
+}

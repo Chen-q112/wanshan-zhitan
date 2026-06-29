@@ -1,0 +1,45 @@
+{
+  "id": "answer_analysis_extension_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.17",
+  "name": "答题解析与拓展",
+  "description": "对用户答错的题目给出详细解析和知识点拓展，流式输出",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "user_answer": {
+        "type": "string",
+        "description": "用户答错的答案"
+      },
+      "correct_answer": {
+        "type": "string",
+        "description": "正确答案"
+      },
+      "subject": {
+        "type": "string",
+        "description": "题目所属学科/领域"
+      },
+      "question_content": {
+        "type": "string",
+        "description": "题目内容"
+      }
+    },
+    "required": [
+      "question_content",
+      "user_answer",
+      "correct_answer"
+    ]
+  },
+  "formValue": {
+    "modelID": "87",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位专业的{{input.subject}}学科教育专家，擅长对题目进行深度解析和知识点拓展。\n\n请针对以下答错的题目给出详细解析：\n题目内容：{{input.question_content}}\n用户错误答案：{{input.user_answer}}\n正确答案：{{input.correct_answer}}\n\n解析要求：\n1. 错误分析（100-200字）：\n   - 明确指出用户答案的错误点\n   - 分析产生错误的可能原因\n   - 说明该错误在知识体系中的常见误区\n\n2. 详细解析（200-300字）：\n   - 逐步讲解正确答案的推导过程\n   - 清晰阐述解题思路和方法\n   - 标注解题过程中的关键步骤和注意事项\n\n3. 知识点拓展（200-300字）：\n   - 提取本题涉及的核心知识点\n   - 对知识点进行系统梳理和深化讲解\n   - 关联相关的其他知识点，形成知识网络\n   - 给出同类型题目的解题技巧和通用方法\n\n4. 巩固建议（100-150字）：\n   - 针对本题暴露的知识薄弱点给出具体的学习建议\n   - 提供后续复习和练习的方向\n\n输出要求：\n- 语言通俗易懂，讲解逻辑清晰\n- 重点内容可以适当加粗标注\n- 避免使用过于专业的术语，必要时进行解释\n- 整体内容结构清晰，分四个部分依次呈现"
+  },
+  "createdAt": 1782711757300,
+  "updatedAt": 1782711757300,
+  "createdBy": 7578885771046702045
+}

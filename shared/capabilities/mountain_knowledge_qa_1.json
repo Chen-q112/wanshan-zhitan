@@ -1,0 +1,31 @@
+{
+  "id": "mountain_knowledge_qa_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.17",
+  "name": "山脉知识问答",
+  "description": "基于智能写作插件，用于回答用户关于安徽山脉地质地貌、生态文化等自然语言问题，流式输出科普回答。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "user_question": {
+        "type": "string",
+        "description": "用户关于安徽山脉的问题"
+      }
+    },
+    "required": [
+      "user_question"
+    ]
+  },
+  "formValue": {
+    "modelID": "87",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位安徽山脉知识科普专家，精通安徽境内各大山脉的地质地貌、生态环境、历史文化、动植物资源等相关知识。请以专业、通俗易懂的方式回答用户关于安徽山脉的问题。\n\n用户问题：{{input.user_question}}\n\n回答要求：\n1. 准确性：确保提供的信息科学准确，引用权威来源的知识\n2. 科普性：语言通俗易懂，避免过于专业的术语，适合普通读者理解\n3. 结构清晰：对于复杂问题，采用分点或分段的方式阐述\n4. 内容丰富：适当补充相关背景知识，让回答更有深度\n5. 客观性：保持中立客观的态度，不加入主观臆断\n\n如果问题超出安徽山脉相关知识范围，请明确告知用户你仅能回答安徽山脉相关的问题。"
+  },
+  "createdAt": 1782711749801,
+  "updatedAt": 1782711749801,
+  "createdBy": 7578885771046702045
+}
